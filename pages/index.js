@@ -6,10 +6,10 @@ import Footer from '@/components/Footer';
 
 const Home = ({ exploreData, cardsData }) => {
   return (
-    <div className="">
+    <div>
       <Head>
-        <title>Airbnb</title>
-        <meta name="description" content="Airbnb clone developed with Next.js" />
+        <title>Airbnb Clone</title>
+        <meta name="description" content="This is not the official Airbnb website. It is a clone developed for educational purposes." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
