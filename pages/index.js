@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Header from '@/components/Header';
 import Banner from '@/components/Banner';
 import Main from '@/components/Main';
+import Footer from '@/components/Footer';
 
 const Home = ({ exploreData, cardsData }) => {
   return (
@@ -17,6 +18,8 @@ const Home = ({ exploreData, cardsData }) => {
       <Banner />
 
       <Main exploreData={exploreData} cardsData={cardsData} />
+
+      <Footer />
     </div>
   );
 };
