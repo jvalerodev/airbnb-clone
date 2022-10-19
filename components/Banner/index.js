@@ -8,6 +8,7 @@ const Banner = () => {
         alt="Banner"
         layout="fill"
         objectFit="cover"
+        priority
       />
 
       <div className="absolute top-1/2 w-full text-center">
