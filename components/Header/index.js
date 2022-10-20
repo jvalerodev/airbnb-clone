@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import { MagnifyingGlassIcon, Bars3Icon, UserCircleIcon, UsersIcon } from '@heroicons/react/24/solid';
+import { MagnifyingGlassIcon, Bars3Icon, UserCircleIcon } from '@heroicons/react/24/solid';
 import { GlobeAltIcon } from '@heroicons/react/24/outline';
+import Calendar from '@/components/Calendar';
 
 const Header = () => {
   const [searchInput, setSearchInput] = useState('');
@@ -39,6 +40,8 @@ const Header = () => {
           <UserCircleIcon className="h-6" />
         </div>
       </div>
+
+      {searchInput && <Calendar setSearchInput={setSearchInput} />}
     </header>
   );
 };
