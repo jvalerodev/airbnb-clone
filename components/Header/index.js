@@ -1,29 +1,32 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import { MagnifyingGlassIcon, Bars3Icon, UserCircleIcon } from '@heroicons/react/24/solid';
 import { GlobeAltIcon } from '@heroicons/react/24/outline';
 import Calendar from '@/components/Calendar';
 
-const Header = () => {
+const Header = ({ placeholder }) => {
   const [searchInput, setSearchInput] = useState('');
 
   return (
     <header className="sticky top-0 z-50 grid grid-cols-3 bg-white shadow-md p-5 md:px-10">
-      <div className="relative flex items-center h-10 cursor-pointer my-auto">
-        <Image
-          src="/img/airbnb-logo.png"
-          alt="Airbnb logo"
-          layout="fill"
-          objectFit="contain"
-          objectPosition="left"
-        />
-      </div>
+      <Link href="/">
+        <a className="relative flex items-center h-10 cursor-pointer my-auto">
+          <Image
+            src="/img/airbnb-logo.png"
+            alt="Airbnb logo"
+            layout="fill"
+            objectFit="contain"
+            objectPosition="left"
+          />
+        </a>
+      </Link>
 
       <div className="flex items-center md:border-2 rounded-full py-2 md:shadow-sm">
         <input
           className="flex-grow pl-5 bg-transparent outline-none text-sm text-gray-600 placeholder-gray-400"
           type="text"
-          placeholder="Start your search"
+          placeholder={placeholder || 'Start your search'}
           value={searchInput}
           onChange={e => setSearchInput(e.target.value)}
         />
@@ -41,7 +44,7 @@ const Header = () => {
         </div>
       </div>
 
-      {searchInput && <Calendar setSearchInput={setSearchInput} />}
+      {searchInput && <Calendar searchInput={searchInput} setSearchInput={setSearchInput} />}
     </header>
   );
 };
