@@ -1,17 +1,13 @@
-import Head from 'next/head';
 import Header from '@/components/Header';
 import Banner from '@/components/Banner';
 import Main from '@/components/Main';
 import Footer from '@/components/Footer';
+import SEO from '@/components/SEO';
 
 const Home = ({ exploreData, cardsData }) => {
   return (
-    <div>
-      <Head>
-        <title>Airbnb Clone</title>
-        <meta name="description" content="This is not the official Airbnb website. It is a clone developed for educational purposes." />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <SEO title="Airbnb Clone" />
 
       <Header />
 
@@ -20,7 +16,7 @@ const Home = ({ exploreData, cardsData }) => {
       <Main exploreData={exploreData} cardsData={cardsData} />
 
       <Footer />
-    </div>
+    </>
   );
 };
 

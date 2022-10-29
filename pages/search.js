@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import InfoCard from '@/components/InfoCard';
 import Map from '@/components/Map';
+import SEO from '@/components/SEO';
 
 const Search = ({ searchResults }) => {
   const router = useRouter();
@@ -14,7 +15,9 @@ const Search = ({ searchResults }) => {
   const range = `${formattedStartDate} - ${formattedEndDate}`;
 
   return (
-    <div>
+    <>
+      <SEO title="Results - Airbnb Clone" />
+
       <Header placeholder={`${location} | ${range} | ${noOfGuests} guests`} />
 
       <main className="flex">
@@ -53,7 +56,7 @@ const Search = ({ searchResults }) => {
       </main>
 
       <Footer />
-    </div>
+    </>
   );
 };
 
